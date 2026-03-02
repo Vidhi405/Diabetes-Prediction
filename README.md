@@ -1,13 +1,20 @@
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red)
+![Machine Learning](https://img.shields.io/badge/Machine-Learning-green)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
 # Diabetes Prediction
 
 ## Introduction
-Diabetes is a chronic metabolic disease, where the body in unable to produce or use insulin effectively, which is resulted 
-by high blood sugar.
+Diabetes is a chronic metabolic disease in which the body is unable to produce or effectively use insulin, resulting in high blood sugar levels.
+Traditional diagnosis requires medical tests and professional evaluation. However, machine learning models can assist in:
 
-Traditional diagnosis requires medical tests and professional evaluations, however, a machine learning model can assist in:
-- Identifying high-risk individuals early
-- Supporting clinical decision makings
+- Identifying high-risk individuals at an early stage
+- Supporting clinical decision-making
 - Enabling accessible health-tech solutions
+
+This project builds an end-to-end Machine Learning pipeline and integrates it with a Streamlit-based web application for real-time diabetes prediction.
 
 ## Requirements
 
@@ -33,46 +40,50 @@ command to download these dependencies.
 
 ## System Architecture
 
-                          ┌─────────────────────────┐
-                          │     Kaggle Dataset      │
-                          │  (Pima Diabetes Data)   │
-                          └─────────────┬───────────┘
-                                        │
-                                        ▼
-                    ┌──────────────────────────────┐
-                    │     Data Preprocessing       │
-                    │  • Cleaning missing values   │
-                    │  • Feature preparation       │
-                    └─────────────┬────────────────┘
-                                  │
-                                  ▼
-                    ┌──────────────────────────────┐
-                    │     ML Model Training        │
-                    │  • Classification Model      │
-                    │  • Evaluation Metrics        │
-                    └─────────────┬────────────────┘
-                                  │
-                                  ▼
-                    ┌──────────────────────────────┐
-                    │      Trained Model           │
-                    └─────────────┬────────────────┘
-                                  │
-                                  │
-        ┌─────────────────────────┴─────────────────────────┐
-        │                                                   │
-        ▼                                                   ▼
-┌───────────────────────┐                        ┌────────────────────────┐
-│  Streamlit Web App    │                        │   Model Evaluation     │
-│  (User Interface)     │                        │  • Accuracy            │
-│  • User Inputs        │                        │  • Confusion Matrix    │
-│  • Form Handling      │                        │  • Classification Rep. │
-└─────────────┬─────────┘                        └────────────────────────┘
-              │
-              ▼
-     ┌───────────────────────┐
-     │   Real-Time           │
-     │   Prediction Output   │
-     └───────────────────────┘
+## 🧠 System Architecture
+
+```
+                          ┌────────────────────────────┐
+                          │       Kaggle Dataset       │
+                          │   (Pima Diabetes Dataset)  │
+                          └──────────────┬─────────────┘
+                                         │
+                                         ▼
+                    ┌──────────────────────────────────┐
+                    │        Data Preprocessing        │
+                    │  • Missing value handling        │
+                    │  • Feature preparation           │
+                    └──────────────┬───────────────────┘
+                                   │
+                                   ▼
+                    ┌──────────────────────────────────┐
+                    │        Model Training            │
+                    │  • Classification Algorithm      │
+                    │  • Evaluation Metrics            │
+                    └──────────────┬───────────────────┘
+                                   │
+                                   ▼
+                    ┌──────────────────────────────────┐
+                    │          Trained Model           │
+                    └──────────────┬───────────────────┘
+                                   │
+            ┌──────────────────────┴──────────────────────┐
+            │                                             │
+            ▼                                             ▼
+
+   ┌──────────────────────────┐                ┌──────────────────────────┐
+   │   Model Evaluation       │                │     Streamlit Web App    │
+   │  • Accuracy              │                │  • User Input Form       │
+   │  • Confusion Matrix      │                │  • Input Processing      │
+   │  • Classification Report │                │  • Prediction Trigger    │
+   └──────────────────────────┘                └─────────────┬────────────┘
+                                                             │
+                                                             ▼
+                                              ┌──────────────────────────┐
+                                              │    Real-Time Prediction  │
+                                              │         Output           │
+                                              └──────────────────────────┘
+```
 
 
 ## Streamlit Integration
@@ -90,3 +101,9 @@ git clone https://github.com/Vidhi405/Diabetes-Prediction.git
 3) To run simply type: streamlit run Prediction.py
 
 The application will open in your default browser.
+
+## Areas for Improvement
+What more I can do is improve the overall UI by learning more about Streamlit, to improve the layout, alignments and the visuals
+I also want to improve the model accuract ad acceptance rate.
+Also implementing some cross-validation for better evaluations.
+Saving the trained model under the '.pkl' will result in faster inferences.
