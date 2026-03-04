@@ -103,7 +103,5 @@ git clone https://github.com/Vidhi405/Diabetes-Prediction.git
 The application will open in your default browser.
 
 ## Areas for Improvement
-What more I can do is improve the overall UI by learning more about Streamlit, to improve the layout, alignments and the visuals
-I also want to improve the model accuract ad acceptance rate.
-Also implementing some cross-validation for better evaluations.
-Saving the trained model under the '.pkl' will result in faster inferences.
+What more I can do is improve the overall UI by learning more about Streamlit, to improve the layout, alignments and the visuals. I also want to improve the model accuracy and acceptance rate. What more I can do is implementing some kind of cross-validation for better evaluations.
+Saving the trained model under the '.pkl' will result in faster inferences is another idea which I will be proceeding with next.
